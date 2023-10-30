@@ -16,7 +16,7 @@ public class User {
 
     @NotBlank(message = "Last name cannot be blank")
     @Size(min = 2, message = "Last name is too short")
-    private String LastName;
+    private String lastName;
 
     @NotBlank(message = "Username cannot be blank")
     @Size(min = 7, message = "Username is too short")
@@ -37,7 +37,7 @@ public class User {
 
     public User(String firstName, String lastName, String userName, String email, Date dateOfBirth) {
         this.firstName = firstName;
-        this.LastName = lastName;
+        this.lastName = lastName;
         this.userName = userName;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
@@ -52,11 +52,11 @@ public class User {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getUserName() {
