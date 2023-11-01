@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link th:href="@{/result-stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+<div class="topnav">
+    <a th:href="@{/}">Form</a>
+    <a th:href="@{/result}">Result</a>
+</div>
+<div class="container">
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Day of Birth</th>
+        </tr>
+        <tr th:each="user:${users}">
+            <td th:text="${user.firstName}"></td>
+            <td th:text="${user.lastName}"></td>
+            <td th:text="${user.userName}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${#dates.format(user.dateOfBirth,'yyyy-MM-dd')}"></td>
+            <td><a role="button" class="update" th:href="@{/(id=${user.id})}">Update</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
